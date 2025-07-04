@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  oracle-xe:
+    image: container-registry.oracle.com/database/express:21.3.0-xe
+    container_name: oracle_xe
+    ports:
+      - "1521:1521"  # Port Oracle Listener
+      - "5500:5500"  # Port Enterprise Manager Express
+    environment:
+      - ORACLE_PWD=MySecurePassword123  # Tu peux modifier ce mot de passe
+      - ORACLE_CHARACTERSET=AL32UTF8
+    volumes:
+      - oracle_data:/opt/oracle/oradata  # Données persistantes
+    healthcheck:
+      test: ["CMD-SHELL", "ls /opt/oracle/oradata || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+    restart: always
+
+volumes:
+  oracle_data:
+

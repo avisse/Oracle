@@ -1,0 +1,5 @@
+SQL> 
+SQL> SELECT id || ',' || objet || ',' || TO_CHAR(date_delib, 'YYYY-MM-DD') || ',' || statut FROM deliberations;
+1,Mise a jour du projet,2025-07-01,en cours                                                                                                                                                             
+SQL> 
+SQL> SPOOL OFF;

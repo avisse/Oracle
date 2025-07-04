@@ -1,0 +1,10 @@
+oracle-database-xe-21c-1.0/
+*.rpm
+*.deb
+*.log
+*.zip
+*.tar.gz
+*.bak
+*.tmp
+*.sqlite
+*.db
